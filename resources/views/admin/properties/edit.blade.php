@@ -70,7 +70,7 @@
                         <div class="label_g2">
                             <label class="label">
                                 <span class="legend">Categoria:</span>
-                                <select name="category" class="select2">
+                                <select name="category">
                                     <option value="residential_property"
                                         {{ (old('category') == 'residential_property' ? 'selected' : ($property->category == 'residential_property' ? 'selected' : ''))}}>
                                         Imóvel Residencial</option>
@@ -85,7 +85,7 @@
 
                             <label class="label">
                                 <span class="legend">Tipo:</span>
-                                <select name="type" class="select2">
+                                <select name="type">
                                     <optgroup label="Imóvel Residencial">
                                         <option value="home"
                                             {{ (old('type') == 'home' ? 'selected' : ($property->type == 'home' ? 'selected' : ''))}}>
@@ -125,7 +125,7 @@
 
                         <label class="label">
                             <span class="legend">Proprietário:</span>
-                            <select name="user" class="select2">
+                            <select name="user">
                                 <option value="">Selecione o proprietário</option>
                                 @foreach ($users as $user)
                                 <option value="{{ $user->id }}" {{ ($user->id === $property->user ? 'selected' : '')}}>
@@ -133,6 +133,16 @@
                                 @endforeach
                             </select>
                         </label>
+
+                        <div class="label_g2">
+                            <label class="label">
+                                <span class="legend">Status:</span>
+                                <select name="status">
+                                    <option value="1" {{ (old('status') == '1' ? 'selected' : ($property->status == true ? 'selected' : ''))}}>Disponível</option>
+                                    <option value="0" {{ (old('status') == '0' ? 'selected' : ($property->status == false ? 'selected' : ''))}}>Indisponível</option>
+                                </select>
+                            </label>
+                        </div>
 
                         <div class="app_collapse">
                             <div class="app_collapse_header mt-2 collapse">

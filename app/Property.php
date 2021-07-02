@@ -91,6 +91,13 @@ class Property extends Model
     {
         $this->attributes['rent'] = ($value == true || $value == 'on' ? 1 : 0);
     }
+
+    ////================================ Status
+    public function setStatusattribute($value)
+    {
+        $this->attributes['status'] = ($value == '1' ? 1 : 0);
+    }
+
     ////================================sale price
     public function setSalePriceAttribute($value)
     {

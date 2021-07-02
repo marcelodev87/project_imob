@@ -25,7 +25,7 @@ class Contract extends Model
         'due_date',
         'deadline',
         'start_at',
-        //'status'
+        'status'
     ];
 
     public function ownerObject()
