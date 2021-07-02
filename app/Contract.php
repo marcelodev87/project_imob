@@ -53,6 +53,21 @@ class Contract extends Model
         return $this->hasOne(Company::class, 'id', 'acquirer_company');
     }
 
+    public function scopePendent($query)
+    {
+        return $query->where('status', 'pendent');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
+
+    public function scopeCanceled($query)
+    {
+        return $query->where('status', 'canceled');
+    }
+
     public function setSaleAttribute($value)
     {
         if($value === true || $value === 'on'){
