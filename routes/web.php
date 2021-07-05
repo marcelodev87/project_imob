@@ -3,6 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use LaraDev\Http\Controllers\Admin\ContractController;
 
+Route::group(['namespace' => 'Web', 'as' => 'web.'], function(){
+
+    route::get('/', 'WebController@home')->name('home');
+    route::get('/quero-alugar', 'WebController@rent')->name('rent');
+    route::get('/quero-comprar', 'WebController@buy')->name('buy');
+    route::get('/filtro', 'WebController@filter')->name('filter');
+    route::get('/contact', 'WebController@contact')->name('contact');
+});
+
 Route::group(['prefix' => 'admin' , 'namespace' => 'Admin', 'as' => 'admin.'] , function () {
 
     //Formulário de Login
