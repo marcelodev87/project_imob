@@ -43,10 +43,13 @@
                             @endif
                         @endforeach
                     </select>
-                    <p style="margin-top: 4px;">
+                    @if(!empty($selected->id))
+                        <p style="margin-top: 4px;">
                         <a href="" class="text-orange icon-link" style="font-size: .8em;" target="_blank">Acessar
                             Cadastro</a>
-                    </p>
+                        </p>
+                    @endif
+
                 </label>
 
                 <label class="label">

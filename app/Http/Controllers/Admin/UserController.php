@@ -5,6 +5,7 @@ namespace LaraDev\Http\Controllers\Admin;
 //use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use LaraDev\Company;
 use LaraDev\Http\Controllers\Controller;
 use LaraDev\Http\Requests\Admin\User as UserRequest;
 use LaraDev\Support\Cropper;
@@ -53,23 +54,16 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        //var_dump($request->file('cover'), $request->all()); // para verificar se a imagem está chegando no seu metodo
-
-         $userCreate = User::create($request->all());
+        $userCreate = User::create($request->all());
 
         if(!empty($request->file('cover'))){
-            $userCreate->cover = $request->file('cover')->storeAs('user', str_slug($request->name) . '-' . str_replace('.', '', microtime(true)) . '.' . $request->file('cover')->extension());
+            $userCreate->cover = $request->file('cover')->store('user');
             $userCreate->save();
         }
 
         return redirect()->route('admin.users.edit', [
             'users' => $userCreate->id
         ])->with(['color' => 'green', 'message' => 'Cliente cadastrado com sucesso!']);
-
-/*
-        $user = new User();
-        $user->fill($request->all());
-        var_dump($user->getAttributes(), $request->all()); */
     }
 
     /**
@@ -122,6 +116,7 @@ class UserController extends Controller
         if(!empty($request->file('cover'))){
             $user->cover = $request->file('cover')->store('user');
         }
+
 
         if(!$user->save()){
             return redirect()->back()->withInput()->withErrors();

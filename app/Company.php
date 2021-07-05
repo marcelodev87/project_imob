@@ -23,9 +23,9 @@ class Company extends Model
         'city'
     ];
 
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo(User::class, 'user', 'id');
+        return $this->hasOne(User::class, 'id', 'user');
     }
 
     public function setDocumentCompanyAttribute($value)
