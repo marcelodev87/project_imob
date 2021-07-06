@@ -176,7 +176,7 @@
             <article class="main_list_group_items_item col-12 col-md-6 col-lg-4 mb-4">
                 <a href="#">
                     <div class="d-flex align-items-center justify-content-center"
-                         style="background: url('assets/images/home/cobertura_oto_1.jpg') no-repeat; background-size: cover;">
+                         style="background: url('frontend/assets/images/home/cobertura_oto_1.jpg') no-repeat; background-size: cover;">
                         <h2>Cobertura</h2>
                     </div>
                 </a>
@@ -185,7 +185,7 @@
             <article class="main_list_group_items_item col-12 col-md-6 col-lg-4 mb-4">
                 <a href="#">
                     <div class="d-flex align-items-center justify-content-center"
-                         style="background: url('assets/images/home/alto_padrao_1.jpg') no-repeat; background-size: cover;">
+                         style="background: url('frontend/assets/images/home/alto_padrao_1.jpg') no-repeat; background-size: cover;">
                         <h2>Alto Padrão</h2>
                     </div>
                 </a>
@@ -194,7 +194,7 @@
             <article class="main_list_group_items_item col-12 col-md-6 col-lg-4 mb-4">
                 <a href="#">
                     <div class="d-flex align-items-center justify-content-center"
-                         style="background: url('assets/images/home/de_frente_pro_mar_original.jpg') no-repeat; background-size: cover;">
+                         style="background: url('frontend/assets/images/home/de_frente_pro_mar_original.jpg') no-repeat; background-size: cover;">
                         <h2>De frente para o Mar</h2>
                     </div>
                 </a>
@@ -203,7 +203,7 @@
             <article class="main_list_group_items_item col-12 col-md-6 col-lg-4 mb-4">
                 <a href="#">
                     <div class="d-flex align-items-center justify-content-center"
-                         style="background: url('assets/images/home/condominio_fechado_1.jpg') no-repeat; background-size: cover;">
+                         style="background: url('frontend/assets/images/home/condominio_fechado_1.jpg') no-repeat; background-size: cover;">
                         <h2>Condomínio Fechado</h2>
                     </div>
                 </a>
@@ -212,7 +212,7 @@
             <article class="main_list_group_items_item col-12 col-md-6 col-lg-4 mb-4">
                 <a href="#">
                     <div class="d-flex align-items-center justify-content-center"
-                         style="background: url('assets/images/home/compacto_1.jpg') no-repeat; background-size: cover;">
+                         style="background: url('frontend/assets/images/home/compacto_1.jpg') no-repeat; background-size: cover;">
                         <h2>Compacto</h2>
                     </div>
                 </a>
@@ -221,7 +221,7 @@
             <article class="main_list_group_items_item col-12 col-md-6 col-lg-4 mb-4">
                 <a href="#">
                     <div class="d-flex align-items-center justify-content-center"
-                         style="background: url('assets/images/home/sala_comercial_original.jpg') no-repeat; background-size: cover;">
+                         style="background: url('frontend/assets/images/home/sala_comercial_original.jpg') no-repeat; background-size: cover;">
                         <h2>Lojas e Salas</h2>
                     </div>
                 </a>
@@ -243,7 +243,7 @@
                 <article class="card main_properties_item">
                     <div class="img-responsive-16by9">
                         <a href="">
-                            <img src="properties/1/5a3571ab-4d76-466f-8246-eff8cb98cedd.jpg" class="card-img-top"
+                            <img src="frontend/properties/1/5a3571ab-4d76-466f-8246-eff8cb98cedd.jpg" class="card-img-top"
                                  alt="">
                         </a>
                     </div>
@@ -258,17 +258,17 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/bed.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/bed.png" class="img-fluid" alt="">
                             <p class="text-muted">4</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/garage.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/garage.png" class="img-fluid" alt="">
                             <p class="text-muted">2</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/util-area.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/util-area.png" class="img-fluid" alt="">
                             <p class="text-muted">1500 m&sup2;</p>
                         </div>
                     </div>
@@ -279,7 +279,7 @@
                 <article class="card main_properties_item">
                     <div class="img-responsive-16by9">
                         <a href="">
-                            <img src="properties/2/a56fc386-3790-4e98-a72c-3b09d24adecd.jpg" class="card-img-top"
+                            <img src="frontend/properties/2/a56fc386-3790-4e98-a72c-3b09d24adecd.jpg" class="card-img-top"
                                  alt="">
                         </a>
                     </div>
@@ -294,17 +294,17 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/bed.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/bed.png" class="img-fluid" alt="">
                             <p class="text-muted">4</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/garage.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/garage.png" class="img-fluid" alt="">
                             <p class="text-muted">2</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/util-area.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/util-area.png" class="img-fluid" alt="">
                             <p class="text-muted">1500 m&sup2;</p>
                         </div>
                     </div>
@@ -315,7 +315,7 @@
                 <article class="card main_properties_item">
                     <div class="img-responsive-16by9">
                         <a href="">
-                            <img src="properties/3/667d07e1-c0ac-4e3b-b450-4bc9bcc9bffb.jpg" class="card-img-top"
+                            <img src="frontend/properties/3/667d07e1-c0ac-4e3b-b450-4bc9bcc9bffb.jpg" class="card-img-top"
                                  alt="">
                         </a>
                     </div>
@@ -330,17 +330,17 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/bed.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/bed.png" class="img-fluid" alt="">
                             <p class="text-muted">4</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/garage.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/garage.png" class="img-fluid" alt="">
                             <p class="text-muted">2</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/util-area.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/util-area.png" class="img-fluid" alt="">
                             <p class="text-muted">1500 m&sup2;</p>
                         </div>
                     </div>
@@ -363,7 +363,7 @@
                 <article class="card main_properties_item">
                     <div class="img-responsive-16by9">
                         <a href="">
-                            <img src="properties/4/3d656134-3760-4c9a-af1a-503301acc0be.jpg" class="card-img-top"
+                            <img src="frontend/properties/4/3d656134-3760-4c9a-af1a-503301acc0be.jpg" class="card-img-top"
                                  alt="">
                         </a>
                     </div>
@@ -378,17 +378,17 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/bed.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/bed.png" class="img-fluid" alt="">
                             <p class="text-muted">4</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/garage.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/garage.png" class="img-fluid" alt="">
                             <p class="text-muted">2</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/util-area.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/util-area.png" class="img-fluid" alt="">
                             <p class="text-muted">1500 m&sup2;</p>
                         </div>
                     </div>
@@ -399,7 +399,7 @@
                 <article class="card main_properties_item">
                     <div class="img-responsive-16by9">
                         <a href="">
-                            <img src="properties/5/39e47814-f0d8-4bb5-8508-1622096d1f4d.jpg" class="card-img-top"
+                            <img src="frontend/properties/5/39e47814-f0d8-4bb5-8508-1622096d1f4d.jpg" class="card-img-top"
                                  alt="">
                         </a>
                     </div>
@@ -414,17 +414,17 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/bed.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/bed.png" class="img-fluid" alt="">
                             <p class="text-muted">4</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/garage.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/garage.png" class="img-fluid" alt="">
                             <p class="text-muted">2</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/util-area.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/util-area.png" class="img-fluid" alt="">
                             <p class="text-muted">1500 m&sup2;</p>
                         </div>
                     </div>
@@ -435,7 +435,7 @@
                 <article class="card main_properties_item">
                     <div class="img-responsive-16by9">
                         <a href="">
-                            <img src="properties/5/8771b309-8314-4023-89a8-1f1b01165075.jpg" class="card-img-top"
+                            <img src="frontend/properties/5/8771b309-8314-4023-89a8-1f1b01165075.jpg" class="card-img-top"
                                  alt="">
                         </a>
                     </div>
@@ -450,17 +450,17 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/bed.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/bed.png" class="img-fluid" alt="">
                             <p class="text-muted">4</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/garage.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/garage.png" class="img-fluid" alt="">
                             <p class="text-muted">2</p>
                         </div>
 
                         <div class="main_properties_features col-4 text-center">
-                            <img src="assets/images/icons/util-area.png" class="img-fluid" alt="">
+                            <img src="frontend/assets/images/icons/util-area.png" class="img-fluid" alt="">
                             <p class="text-muted">1500 m&sup2;</p>
                         </div>
                     </div>

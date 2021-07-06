@@ -51,7 +51,11 @@ class Property extends Model
         'pool',
         'steam_room',
         'view_of_the_sea',
-        'status'
+        'status',
+        'title',
+        'slug',
+        'headline',
+        'experience'
     ];
 
     public function user()
@@ -297,6 +301,14 @@ class Property extends Model
     public function setViewOfTheSeaAttribute($value)
     {
         $this->attributes['view_of_the_sea'] = (($value === true || $value === 'on') ? 1 : 0);
+    }
+
+    public function setSlug()
+    {
+        if(!empty($this->title)){
+            $this->attributes['slug'] = str_slug($this->title). '-' . $this->id;
+            $this->save();
+        }
     }
 
     private function convertStringToDouble($param)

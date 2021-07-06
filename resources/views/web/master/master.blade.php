@@ -7,11 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Imobiliária</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap_person.css">
-    <link rel="stylesheet" href="assets/libs/lightbox/ekko-lightbox.css">
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="{{ url(asset('frontend/assets/css/bootstrap.css'))}}">
+    <link rel="stylesheet" href="{{ url(asset('frontend/assets/libs/libs.css'))}}">
+    <link rel="stylesheet" href="{{ url(asset('frontend/assets/css/app.css'))}}">
+@hasSection('css')
+    @yield('css')
+@endif
 
-    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+    <link rel="icon" type="image/png" href="{{ url(asset('frontend/assets/images/favicon.png'))}}"/>
 </head>
 <body>
 
@@ -46,7 +49,7 @@
             <div class="navbar-brand">
                 <a href="index.php">
                     <h1 class="text-hide">Imobiliária</h1>
-                    <img src="assets/images/logo.png" width="280" alt="Imobiliária" class="d-inline-block">
+                    <img src="{{ url(asset('frontend/assets/images/logo.png'))}}" width="280" alt="Imobiliária" class="d-inline-block">
                 </a>
             </div>
 
@@ -89,7 +92,7 @@
 </article>
 
 <section class="main_footer bg-light"
-         style="background: url(assets/images/footer.png) repeat-x bottom center; background-size: 10%;">
+         style="background: url(frontend/assets/images/footer.png) repeat-x bottom center; background-size: 10%;">
     <div class="container pt-5" style="padding-bottom: 120px;">
 
         <div class="row d-flex justify-content-around text-muted">
@@ -134,52 +137,13 @@
     </div>
 </div>
 
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/lightbox/ekko-lightbox.min.js"></script>
-<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-<script src="node_modules/bootstrap-select/dist/js/i18n/defaults-pt_BR.min.js"></script>
-<script src="assets/js/scripts.js"></script>
-
-<script>
-
-    function markMap() {
-
-        var locationJson = $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=Rodovia+Doutor+Antonio+Luiz+Moura+Gonzaga,+3339+Florianopolis+Campeche&key=', function(response){
-            console.log(response.results[0].geometry.location.lat);
-            console.log(response.results[0].geometry.location.lng);
-
-            lat = response.results[0].geometry.location.lat;
-            lng = response.results[0].geometry.location.lng;
-
-            var citymap = {
-                property: {
-                    center: {lat: lat, lng: lng},
-                    population: 100
-                }
-            };
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                center: {lat: lat, lng: lng},
-                mapTypeId: 'terrain'
-            });
-
-            for (var city in citymap) {
-                var cityCircle = new google.maps.Circle({
-                    strokeColor: '#FF0000',
-                    strokeOpacity: 0.8,
-                    strokeWeight: 2,
-                    fillColor: '#FF0000',
-                    fillOpacity: 0.35,
-                    map: map,
-                    center: citymap[city].center,
-                    radius: Math.sqrt(citymap[city].population) * 100
-                });
-            }
-        });
-    }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=markMap"></script>
+<script src="{{ url(asset('frontend/assets/js/jquery.js'))}}"></script>
+<script src="{{ url(asset('frontend/assets/js/bootstrap.js'))}}"></script>
+<script src="{{ url(asset('frontend/assets/js/libs.js'))}}"></script>
+<script src="{{ url(asset('frontend/assets/libs/libs.js'))}}"></script>
+<script src="{{ url(asset('frontend/assets/js/scripts.js'))}}"></script>
+@hasSection('js')
+    @yield('js')
+@endif
 </body>
 </html>

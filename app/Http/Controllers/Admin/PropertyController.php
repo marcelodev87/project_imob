@@ -50,6 +50,8 @@ class PropertyController extends Controller
     {
         $createProperty = Property::create($request->all());
 
+        $createProperty->setSlug();
+
         $validator = Validator::make($request->only('files'), ['files.*' => 'image']);
 
         if($validator->fails() === true){
@@ -131,6 +133,8 @@ class PropertyController extends Controller
         $property->setViewOfTheSeaAttribute($request->view_of_the_sea);
 
         $property->save();
+        $property->setSlug();
+
 
         $validator = Validator::make($request->only('files'), ['files.*' => 'mimes:jpeg,jpg,svg,png']);
         //$validator = Validator::make($request->only('files'), ['files.*' => 'image']);
