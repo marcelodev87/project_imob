@@ -137,11 +137,12 @@
     </div>
 </div>
 
-<script src="{{ url(asset('frontend/assets/js/jquery.js'))}}"></script>
-<script src="{{ url(asset('frontend/assets/js/bootstrap.js'))}}"></script>
-<script src="{{ url(asset('frontend/assets/js/libs.js'))}}"></script>
-<script src="{{ url(asset('frontend/assets/libs/libs.js'))}}"></script>
-<script src="{{ url(asset('frontend/assets/js/scripts.js'))}}"></script>
+<script src="{{ url(asset('frontend/assets/js/jquery.js')) }}"></script>
+<script src="{{ url(asset('frontend/assets/js/bootstrap.js')) }}"></script>
+<script src="{{ url(asset('frontend/assets/js/libs.js')) }}"></script>
+<script src="{{ url(asset('frontend/assets/libs/libs.js')) }}"></script>
+<script src="{{ url(asset('frontend/assets/js/scripts.js')) }}"></script>
+
 @hasSection('js')
     @yield('js')
 @endif

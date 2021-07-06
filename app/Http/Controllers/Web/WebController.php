@@ -27,7 +27,9 @@ class WebController extends Controller
     public function rentProperty(Request $request)
     {
         $property = Property::where('slug', $request->slug)->first();
-        var_dump($request->slug);
+        return view('web.property', [
+            'property' => $property
+        ]);
     }
 
     public function buy()
@@ -38,7 +40,9 @@ class WebController extends Controller
     public function buyProperty(Request $request)
     {
         $property = Property::where('slug', $request->slug)->first();
-        var_dump($request->slug);
+        return view('web.property', [
+            'property' => $property
+        ]);
     }
 
     public function filter()
