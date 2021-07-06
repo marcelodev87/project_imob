@@ -84,7 +84,7 @@ class Property extends Model
 
         return Storage::url(Cropper::thumb($cover['path'], 1366, 768));
     }
-
+// ====================== SCOPES ===================
     public function scopeAvailable($query)
     {
         return $query->where('status', 1);
@@ -94,6 +94,17 @@ class Property extends Model
     {
         return $query->where('status', 0);
     }
+
+    public function scopeSale($query)
+    {
+        return $query->where('sale', 1);
+    }
+
+    public function scopeRent($query)
+    {
+        return $query->where('rent', 1);
+    }
+// ====================== SCOPES ===================
 
     public function setSaleAttribute($value)
     {

@@ -7,7 +7,9 @@ Route::group(['namespace' => 'Web', 'as' => 'web.'], function(){
 
     route::get('/', 'WebController@home')->name('home');
     route::get('/quero-alugar', 'WebController@rent')->name('rent');
+    route::get('/quero-alugar/{slug}', 'WebController@rentProperty')->name('rentProperty');
     route::get('/quero-comprar', 'WebController@buy')->name('buy');
+    route::get('/quero-comprar/{slug}', 'WebController@buyProperty')->name('buyProperty');
     route::get('/filtro', 'WebController@filter')->name('filter');
     route::get('/contact', 'WebController@contact')->name('contact');
 });
