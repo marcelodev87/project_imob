@@ -236,7 +236,7 @@
 
     function markMap() {
 
-        var locationJson = $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=Rodovia+Doutor+Antonio+Luiz+Moura+Gonzaga,+3339+Florianopolis+Campeche&key=', function(response){
+        var locationJson = $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address={{ $property->street }},+{{ $property->number }}+{{ $property->city }}+{{ $property->neighborhood }}&key=AIzaSyBvs0-NC6iwsuQVy6_oFXh4nynwaXOxqIY', function(response){
             console.log(response.results[0].geometry.location.lat);
             console.log(response.results[0].geometry.location.lng);
 
@@ -246,12 +246,12 @@
             var citymap = {
                 property: {
                     center: {lat: lat, lng: lng},
-                    population: 100
+                    population: 50
                 }
             };
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
+                zoom: 15,
                 center: {lat: lat, lng: lng},
                 mapTypeId: 'terrain'
             });
@@ -271,5 +271,5 @@
         });
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=markMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs0-NC6iwsuQVy6_oFXh4nynwaXOxqIY&callback=markMap"></script>
 @endsection

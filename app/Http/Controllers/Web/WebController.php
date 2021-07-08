@@ -5,6 +5,7 @@ namespace LaraDev\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use LaraDev\Http\Controllers\Controller;
 use LaraDev\Property;
+use LaraDev\Http\Controllers\Web\FilterController;
 
 class WebController extends Controller
 {
@@ -47,7 +48,22 @@ class WebController extends Controller
 
     public function filter()
     {
-        return view('web.filter');
+        $filter = new FilterController();
+        $itemProperties = $filter->createQuery('id');
+
+        foreach($itemProperties as $property){
+            $properties[] = $property->id;
+        }
+
+        if(!empty($properties)){
+            $properties = Property::whereIn('id', $properties)->get();
+        }else{
+            $properties = Property::all();
+        }
+
+        return view('web.filter', [
+            'properties' => $properties
+        ]);
     }
 
     public function contact()
