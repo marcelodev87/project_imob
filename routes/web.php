@@ -5,15 +5,34 @@ use LaraDev\Http\Controllers\Admin\ContractController;
 
 Route::group(['namespace' => 'Web', 'as' => 'web.'], function(){
 
+    // ================================= Página Inicial ===========================
     route::get('/', 'WebController@home')->name('home');
+
+    // ================================= Página de Locação ===========================
     route::get('/quero-alugar', 'WebController@rent')->name('rent');
+
+    // ============================ Página de Locação de um imóvel específico ==============
     route::get('/quero-alugar/{slug}', 'WebController@rentProperty')->name('rentProperty');
+
+    // ================================= Página de Compra ===========================
     route::get('/quero-comprar', 'WebController@buy')->name('buy');
+
+    // ================================= Página de Compra de um Imóvel ===========================
     route::get('/quero-comprar/{slug}', 'WebController@buyProperty')->name('buyProperty');
+
+    // ================================= Página de Inicial ===========================
     route::match(['post', 'get'], '/filtro', 'WebController@filter')->name('filter');
+
+    // ================================= Página de Experiências ===========================
+    route::get('/experiencias', 'WebController@experience')->name('experience');
+
+    // ================================= Página de Experiências de uma Categoria ===========================
+    route::get('/experiencias/{slug}', 'WebController@experienceCategory')->name('experienceCategory');
+
+    // ================================= Página de Contato ===========================
     route::get('/contact', 'WebController@contact')->name('contact');
 });
-//==================================== Pesquisa avançada
+//==================================== Pesquisa avançada =================================================
 Route::group(['prefix' => 'component', 'namespace' => 'Web', 'as' => 'component.'], function(){
     Route::post('main-filter/search', 'FilterController@search')->name('main-filter.search');
     Route::post('main-filter/category', 'FilterController@category')->name('main-filter.category');

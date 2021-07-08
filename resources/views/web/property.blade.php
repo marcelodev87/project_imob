@@ -17,28 +17,27 @@
                         <ol class="carousel-indicators">
 
                             @if($property->images()->get()->count())
-                                @foreach($property->images()->get() as $image)
-                                    <li data-target="#carouselProperty" data-slide-to="{{ $loop->iteration }}" {!! ($loop->iteration == 1 ? 'class="active"' : '') !!}></li>
-                                @endforeach
+                            @foreach($property->images()->get() as $image)
+                            <li data-target="#carouselProperty" data-slide-to="{{ $loop->iteration }}" {!! ($loop->
+                                iteration == 1 ? 'class="active"' : '') !!}></li>
+                            @endforeach
                             @endif
 
                         </ol>
                         <div class="carousel-inner">
                             @if($property->images()->get()->count())
-                                @foreach($property->images()->get() as $image)
+                            @foreach($property->images()->get() as $image)
 
-                                    <div class="carousel-item {{ ($loop->iteration == 1 ? 'active' : '') }}">
-                                        <a href="{{ $image->getUrlCroppedAttribute() }}" data-toggle="lightbox"
-                                        data-gallery="property-gallery" data-type="image">
-                                            <img src="{{ $image->getUrlCroppedAttribute() }}"
-                                                class="d-block w-100"
-                                                alt="{{ $property->title }}">
-                                        </a>
-                                    </div>
+                            <div class="carousel-item {{ ($loop->iteration == 1 ? 'active' : '') }}">
+                                <a href="{{ $image->getUrlCroppedAttribute() }}" data-toggle="lightbox"
+                                    data-gallery="property-gallery" data-type="image">
+                                    <img src="{{ $image->getUrlCroppedAttribute() }}" class="d-block w-100"
+                                        alt="{{ $property->title }}">
+                                </a>
+                            </div>
 
-                                @endforeach
+                            @endforeach
                             @endif
-
 
                         </div>
                         <a class="carousel-control-prev" href="#carouselProperty" role="button" data-slide="prev">
@@ -53,9 +52,31 @@
 
 
                     <div class="main_property_price pt-4 text-muted">
-                        <p class="main_property_price_small">IPTU: R$ {{ $property->tribute }} {{ ($property->condominium != '0,00' ? '| Condomínio: R$ '. $property->condominium : '') }} </p>
-                        <p class="main_property_price_big">Valor do Aluguel: R$ {{ $property->rent_price }}/mês</p>
+                        <p class="main_property_price_small">IPTU: R$ {{ $property->tribute }}
+                            {{ ($property->condominium != '0,00' ? '| Condomínio: R$ '. $property->condominium : '') }}
+                        </p>
+
                     </div>
+
+                    @if(!empty($type) && $type == 'sale')
+                        <p class="main_property_price_big">Valor do Imóvel: R$ {{ $property->sale_price }}</p>
+                    @elseif (!empty($type) && $type == 'rent')
+                        <p class="main_property_price_big">Valor do Aluguel: R$ {{ $property->rent_price }}/mês</p>
+                    @else
+
+                        @if ($property->sale == true && !empty($property->sale_price) && $property->rent == true && !empty($property->rent_price))
+                        <p class="main_property_price_big">Valor do Imóvel: R$ {{ $property->sale_price }}</p><br>
+                            ou  Valor do Aluguel: R$ {{ $property->rent_price }}/mês</p>
+
+                        @elseif ($property->sale == true && !empty($property->sale_price))
+                            <p class="main_property_price_big">Valor do Imóvel: R$ {{ $property->sale_price }}</p>
+                        @elseif ($property->rent == true && !empty($property->rent_price))
+                            <p class="main_property_price_big">Valor do Aluguel: R$ {{ $property->rent_price }}/mês</p>
+                        @else
+                            <p class="main_properties_price text-front">Entre em contato com nossa equipe</p>
+                        @endif
+                    @endif
+
 
                     <div class="main_property_content_description">
                         <h2 class="text-front">Conheça mais o imóvel</h2>
@@ -66,38 +87,38 @@
                         <h2 class="text-front">Características</h2>
                         <table class="table table-striped" style="margin-bottom: 40px;">
                             <tbody>
-                            <tr>
-                                <td>Domitórios</td>
-                                <td>{{ $property->bedrooms }}</td>
-                            </tr>
-                            <tr>
-                                <td>Suítes</td>
-                                <td>{{ $property->suites }}</td>
-                            </tr>
-                            <tr>
-                                <td>Banheiros</td>
-                                <td>{{ $property->bathrooms }}</td>
-                            </tr>
-                            <tr>
-                                <td>Salas</td>
-                                <td>{{ $property->rooms }}</td>
-                            </tr>
-                            <tr>
-                                <td>Garagem</td>
-                                <td>{{ $property->garage }}</td>
-                            </tr>
-                            <tr>
-                                <td>Garagem Coberta</td>
-                                <td>{{ $property->garage_covered }}</td>
-                            </tr>
-                            <tr>
-                                <td>Área Total</td>
-                                <td>{{ $property->area_total }} m&sup2;</td>
-                            </tr>
-                            <tr>
-                                <td>Área Útil</td>
-                                <td>{{ $property->area_util }} m&sup2;</td>
-                            </tr>
+                                <tr>
+                                    <td>Domitórios</td>
+                                    <td>{{ $property->bedrooms }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Suítes</td>
+                                    <td>{{ $property->suites }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Banheiros</td>
+                                    <td>{{ $property->bathrooms }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Salas</td>
+                                    <td>{{ $property->rooms }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Garagem</td>
+                                    <td>{{ $property->garage }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Garagem Coberta</td>
+                                    <td>{{ $property->garage_covered }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Área Total</td>
+                                    <td>{{ $property->area_total }} m&sup2;</td>
+                                </tr>
+                                <tr>
+                                    <td>Área Útil</td>
+                                    <td>{{ $property->area_util }} m&sup2;</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -107,67 +128,67 @@
 
                         <div class="row">
                             @if($property->air_conditioning == true)
-                                <span class="main_property_structure_item icon-check">Ar Condicionado</span>
+                            <span class="main_property_structure_item icon-check">Ar Condicionado</span>
                             @endif
 
                             @if($property->bar == true)
-                                <span class="main_property_structure_item icon-check">Bar</span>
+                            <span class="main_property_structure_item icon-check">Bar</span>
                             @endif
 
                             @if($property->library == true)
-                                <span class="main_property_structure_item icon-check">Biblioteca</span>
+                            <span class="main_property_structure_item icon-check">Biblioteca</span>
                             @endif
 
                             @if($property->barbecue_grill == true)
-                                <span class="main_property_structure_item icon-check">Churrasqueira</span>
+                            <span class="main_property_structure_item icon-check">Churrasqueira</span>
                             @endif
 
                             @if($property->american_kitchen == true)
-                                <span class="main_property_structure_item icon-check">Cozinha Americana</span>
+                            <span class="main_property_structure_item icon-check">Cozinha Americana</span>
                             @endif
 
                             @if($property->fitted_kitchen == true)
-                                <span class="main_property_structure_item icon-check">Cozinha Planejada</span>
+                            <span class="main_property_structure_item icon-check">Cozinha Planejada</span>
                             @endif
 
                             @if($property->pantry == true)
-                                <span class="main_property_structure_item icon-check">Despensa</span>
+                            <span class="main_property_structure_item icon-check">Despensa</span>
                             @endif
 
                             @if($property->edicule == true)
-                                <span class="main_property_structure_item icon-check">Edicula</span>
+                            <span class="main_property_structure_item icon-check">Edicula</span>
                             @endif
 
                             @if($property->office == true)
-                                <span class="main_property_structure_item icon-check">Escritório</span>
+                            <span class="main_property_structure_item icon-check">Escritório</span>
                             @endif
 
                             @if($property->bathtub == true)
-                                <span class="main_property_structure_item icon-check">Banheira</span>
+                            <span class="main_property_structure_item icon-check">Banheira</span>
                             @endif
 
                             @if($property->fireplace == true)
-                                <span class="main_property_structure_item icon-check">Lareira</span>
+                            <span class="main_property_structure_item icon-check">Lareira</span>
                             @endif
 
                             @if($property->lavatory == true)
-                                <span class="main_property_structure_item icon-check">Lavabo</span>
+                            <span class="main_property_structure_item icon-check">Lavabo</span>
                             @endif
 
                             @if($property->furnished == true)
-                                <span class="main_property_structure_item icon-check">Mobiliado</span>
+                            <span class="main_property_structure_item icon-check">Mobiliado</span>
                             @endif
 
                             @if($property->pool == true)
-                                <span class="main_property_structure_item icon-check">Piscina</span>
+                            <span class="main_property_structure_item icon-check">Piscina</span>
                             @endif
 
                             @if($property->steam_room == true)
-                                <span class="main_property_structure_item icon-check">Sauna</span>
+                            <span class="main_property_structure_item icon-check">Sauna</span>
                             @endif
 
                             @if($property->view_of_the_sea == true)
-                                <span class="main_property_structure_item icon-check">Vista para o Mar</span>
+                            <span class="main_property_structure_item icon-check">Vista para o Mar</span>
                             @endif
                         </div>
                     </div>
@@ -190,24 +211,25 @@
                             <div class="form-group">
                                 <label for="name">Seu nome:</label>
                                 <input type="text" id="name" class="form-control"
-                                       placeholder="Informe seu nome completo">
+                                    placeholder="Informe seu nome completo">
                             </div>
 
                             <div class="form-group">
                                 <label for="telephone">Seu telefone:</label>
                                 <input type="tel" id="telephone" class="form-control"
-                                       placeholder="Informe seu telefone com DDD">
+                                    placeholder="Informe seu telefone com DDD">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Seu e-mail:</label>
                                 <input type="email" id="email" class="form-control"
-                                       placeholder="Informe seu melhor e-mail">
+                                    placeholder="Informe seu melhor e-mail">
                             </div>
 
                             <div class="form-group">
                                 <label for="message">Sua Mensagem:</label>
-                                <textarea name="message" id="message" cols="30" rows="5" class="form-control">Quero ter mais informações sobre esse imóvel. Imóvel Residencial, Casa, Campeche, Florianópolis! (#01)</textarea>
+                                <textarea name="message" id="message" cols="30" rows="5"
+                                    class="form-control">Quero ter mais informações sobre esse imóvel. Imóvel Residencial, Casa, Campeche, Florianópolis! (#01)</textarea>
                             </div>
 
                             <div class="form-group">
@@ -233,7 +255,6 @@
 @section('js')
 
 <script>
-
     function markMap() {
 
         var locationJson = $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address={{ $property->street }},+{{ $property->number }}+{{ $property->city }}+{{ $property->neighborhood }}&key=AIzaSyBvs0-NC6iwsuQVy6_oFXh4nynwaXOxqIY', function(response){
@@ -271,5 +292,6 @@
         });
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs0-NC6iwsuQVy6_oFXh4nynwaXOxqIY&callback=markMap"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs0-NC6iwsuQVy6_oFXh4nynwaXOxqIY&callback=markMap"></script>
 @endsection

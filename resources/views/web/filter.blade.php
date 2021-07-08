@@ -101,19 +101,37 @@
                     <div class="col-12 col-md-12 col-lg-6 mb-4">
                         <article class="card main_properties_item">
                             <div class="img-responsive-16by9">
-                                <a href="{{ route((session('sale') == true ? 'web.buyProperty' : 'web.rentProperty'), ['property' => $property->slug] )}}">
+                                <a href="{{ route((session('sale') == true || (!empty($type) && $type  == 'sale') || ($property->rent == false) ? 'web.buyProperty' : 'web.rentProperty'), ['property' => $property->slug] )}}">
                                     <img src="{{ $property->cover() }}"
                                         class="card-img-top" alt="">
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h2><a href="{{ route((session('sale') == true ? 'web.buyProperty' : 'web.rentProperty'), ['property' => $property->slug] )}}" class="text-front">{{ $property->title }}</a>
+                                <h2><a href="{{ route((session('sale') == true || (!empty($type) && $type == 'sale') || ($property->rent == false) ? 'web.buyProperty' : 'web.rentProperty'), ['property' => $property->slug] )}}" class="text-front">{{ $property->title }}</a>
                                 </h2>
                                 <p class="main_properties_item_category">{{ $property->category }}</p>
                                 <p class="main_properties_item_type">{{ $property->type }} - {{ $property->neighborhood }}<i
                                         class="icon-location-arrow icon-notext"></i></p>
-                                <p class="main_properties_price text-front">R$ {{ $property->sale_price }}</p>
-                                <a href="{{ route((session('sale') == true ? 'web.buyProperty' : 'web.rentProperty'), ['property' => $property->slug] )}}" class="btn btn-front btn-block">Ver Imóvel</a>
+                                @if(!empty($type) && $type == 'sale')
+                                    <p class="main_properties_price text-front">R$ {{ $property->sale_price }}</p>
+                                @elseif (!empty($type) && $type == 'rent')
+                                    <p class="main_properties_price text-front">R$ {{ $property->rent_price }}/mês</p>
+                                    @else
+
+                                    @if ($property->sale == true && !empty($property->sale_price) && $property->rent == true && !empty($property->rent_price))
+                                        <p class="main_properties_price text-front">R$ {{ $property->sale_price }}<br>
+                                            ou R$ {{ $property->rent_price }}/mês</p>
+
+                                            @elseif ($property->sale == true && !empty($property->sale_price))
+                                                <p class="main_properties_price text-front">R$ {{ $property->sale_price }}</p>
+                                            @elseif ($property->rent == true && !empty($property->rent_price))
+                                                <p class="main_properties_price text-front">R$ {{ $property->rent_price }}</p>
+                                            @else
+                                                <p class="main_properties_price text-front">Entre em contato com nossa equipe</p>
+                                    @endif
+                                @endif
+
+                                <a href="{{ route((session('sale') == true || (!empty($type) && $type  == 'sale') || ($property->rent == false) ? 'web.buyProperty' : 'web.rentProperty'), ['property' => $property->slug] )}}" class="btn btn-front btn-block">Ver Imóvel</a>
                             </div>
                             <div class="card-footer d-flex">
                                 <div class="main_properties_features col-4 text-center">
@@ -134,6 +152,11 @@
                         </article>
                     </div>
                 @endforeach
+                @else
+                    <div class="col-12 p-5 bg-white">
+                        <h2 class="text-front icon-info text-center">Ooops! Não encontramos nenhum imóvel!</h2>
+                        <p class="text-center">Utilize a busca avançada para encontrar o imóvel dos seus sonhos!</p>
+                    </div>
                 @endif
 
                 </section>
