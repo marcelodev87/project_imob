@@ -79,4 +79,6 @@ $(function () {
         }, 'json');
     });
 
+    delete $ajaxSettings.headers['x-csrf-token'];
+
 });

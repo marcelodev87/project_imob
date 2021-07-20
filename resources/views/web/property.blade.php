@@ -201,8 +201,8 @@
                 </div>
 
                 <div class="col-12 col-lg-4">
-                    <button class="btn btn-outline-success btn-lg btn-block icon-whatsapp mb-3">Converse com o Corretor!
-                    </button>
+                    <a href="https://api.whatsapp.com/send?phone=DDI+DDD+TELEFONE&text=Olá, preciso de ajuda com o login." target="blank" class="btn btn-outline-success btn-lg btn-block icon-whatsapp mb-3">Converse com o Corretor!
+                    </a>
 
                     <div class="main_property_contact">
                         <h2 class="bg-front text-white">Entre em contato</h2>
@@ -239,11 +239,14 @@
                         </form>
                     </div>
 
-                    <div class="main_property_share py-3 text-right">
-                        <span class="text-front mr-2">Compartilhe:</span>
-                        <button class="btn btn-front icon-facebook icon-notext"></button>
-                        <button class="btn btn-front icon-twitter icon-notext"></button>
-                        <button class="btn btn-front icon-instagram icon-notext"></button>
+                    <div class="main_property_share py-3 text-right d-flex justify-content-center">
+                        <div class="fb-share-button mr-2" data-href="{{ url()->current()}}" data-layout="button" data-size="large">
+                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a>
+                        </div>
+
+                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-text="{{ $property->title }}" data-size="large" data-url="{{ url()->current() }}">Tweet</a>
+
+                            <a style="padding: 0 10px; margin: 0; font-size: 0.875em" href="https://www.instagram.com/neymarjr/?hl=pt-br" class="btn btn-front icon-instagram ml-2" target="blank">Instagram</a>
                     </div>
                 </div>
             </div>
@@ -294,4 +297,8 @@
 </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs0-NC6iwsuQVy6_oFXh4nynwaXOxqIY&callback=markMap"></script>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v11.0" nonce="jhkl1IvP"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 @endsection

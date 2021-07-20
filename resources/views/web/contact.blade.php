@@ -49,7 +49,9 @@
             <div class="col-12 col-md-4">
                 <h2 class="icon-share-alt">Redes Sociais</h2>
                 <p>Fique por dentro do tudo o que a gente compartilha em nossas redes sociais!</p>
-                <p><button class="btn btn-front icon-facebook icon-notext"></button> <button class="btn btn-front icon-twitter icon-notext"></button> <button class="btn btn-front icon-instagram icon-notext"></button></p>
+                <p><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}&amp;src=sdkpreparse"  class="btn btn-front icon-facebook icon-notext"></a>
+                    <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="btn btn-front icon-twitter icon-notext"></a>
+                    <a target="_blank" href="https://www.instagram.com/neymarjr/?hl=pt-br" class="btn btn-front icon-instagram icon-notext"></a></p>
             </div>
         </div>
     </div>

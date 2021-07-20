@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Imobiliária</title>
+     {!! $head ?? '' !!}
 
     <link rel="stylesheet" href="{{ url(asset('frontend/assets/css/bootstrap.css'))}}">
     <link rel="stylesheet" href="{{ url(asset('frontend/assets/libs/libs.css'))}}">
@@ -64,7 +64,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="{{ route('web.home')}}" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-front">Destaque</a></li>
+                    <li class="nav-item"><a href="{{ route('web.spotlight')}}" class="nav-link text-front">Destaque</a></li>
                     <li class="nav-item"><a href="{{ route('web.rent')}}" class="nav-link">Alugar</a></li>
                     <li class="nav-item"><a href="{{ route('web.buy')}}" class="nav-link">Comprar</a></li>
                     <li class="nav-item"><a href="{{ route('web.contact')}}" class="nav-link">Contato</a></li>
@@ -95,7 +95,7 @@
 </article>
 
 <section class="main_footer bg-light"
-         style="background: url(frontend/assets/images/footer.png) repeat-x bottom center; background-size: 10%;">
+         style="background: url({{ asset('frontend/assets/images/footer.png')}}) repeat-x bottom center; background-size: 10%;">
     <div class="container pt-5" style="padding-bottom: 120px;">
 
         <div class="row d-flex justify-content-around text-muted">
@@ -104,7 +104,7 @@
                 <h1 class="pb-2">Navegue <span class="text-front">Aqui!</span></h1>
                 <ul>
                     <li><a href="{{ route('web.home')}}">Home</a></li>
-                    <li><a href="{{ route('web.home')}}" class="text-front">Destaque</a></li>
+                    <li><a href="{{ route('web.spotlight')}}" class="text-front">Destaque</a></li>
                     <li><a href="{{ route('web.rent')}}">Alugar</a></li>
                     <li><a href="{{ route('web.buy')}}">Comprar</a></li>
                     <li><a href="{{ route('web.contact')}}">Contato</a></li>
@@ -121,10 +121,11 @@
             </div>
 
             <div class="col-12 col-md-12 col-lg-3 text-center">
-                <button class="btn btn-front icon-facebook icon-notext"></button>
-                <button class="btn btn-front icon-twitter icon-notext"></button>
-                <button class="btn btn-front icon-instagram icon-notext"></button>
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}&amp;src=sdkpreparse"  class="btn btn-front icon-facebook icon-notext"></a>
+                <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="btn btn-front icon-twitter icon-notext"></a>
+                <a target="_blank" href="https://www.instagram.com/neymarjr/?hl=pt-br" class="btn btn-front icon-instagram icon-notext"></a>
             </div>
+
         </div>
     </div>
 </section>
