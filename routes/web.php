@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use LaraDev\Http\Controllers\Admin\ContractController;
+use LaraDev\Http\Controllers\Web\WebController;
 
 Route::group(['namespace' => 'Web', 'as' => 'web.'], function(){
 
@@ -33,7 +34,9 @@ Route::group(['namespace' => 'Web', 'as' => 'web.'], function(){
     route::get('/experiencias/{slug}', 'WebController@experienceCategory')->name('experienceCategory');
 
     // ================================= Página de Contato ===========================
-    route::get('/contact', 'WebController@contact')->name('contact');
+    route::get('/contato', 'WebController@contact')->name('contact');
+    route::post('/contato/sendEmail', 'WebController@sendEmail')->name('sendEmail');
+    route::get('/contato/sucesso', 'WebController@sendEmailSuccess')->name('sendEmailSuccess');
 });
 //==================================== Pesquisa avançada =================================================
 Route::group(['prefix' => 'component', 'namespace' => 'Web', 'as' => 'component.'], function(){
